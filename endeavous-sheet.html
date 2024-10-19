@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endeavour OS Terminal Cheat Sheet</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1c1c1c;
+            color: #eaeaea;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #a64ac9;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #a64ac9;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            border-bottom: 2px solid #a64ac9;
+            padding-bottom: 10px;
+        }
+
+        .command {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #a64ac9;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .command p {
+            margin: 0;
+            color: #fff;
+        }
+
+        .description {
+            color: #c0c0c0;
+            font-size: 1rem;
+        }
+
+        .command:hover {
+            background-color: #444;
+        }
+
+        .tooltip {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 220px;
+            background-color: #a64ac9;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .intro {
+            background-color: #282828;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #a64ac9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .command {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .command p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Endeavour OS Terminal Cheat Sheet</h1>
+
+        <!-- Introduction à Endeavour OS -->
+        <div class="intro">
+            <p><strong>Endeavour OS</strong> est une distribution basée sur Arch Linux, conçue pour être légère et facilement personnalisable. Elle utilise principalement un terminal pour la gestion des paquets, des mises à jour et l'exécution des tâches administratives. Endeavour OS offre aussi l'outil <strong>yay</strong> pour la gestion des paquets AUR (Arch User Repository), facilitant l'installation de logiciels supplémentaires.</p>
+        </div>
+
+        <h2>Navigation dans le terminal</h2>
+
+        <div class="command">
+            <p><strong>ls</strong></p>
+            <span class="description">Lister les fichiers dans le répertoire courant</span>
+        </div>
+
+        <div class="command">
+            <p><strong>cd [répertoire]</strong></p>
+            <span class="description">Changer de répertoire</span>
+        </div>
+
+        <div class="command">
+            <p><strong>pwd</strong></p>
+            <span class="description">Afficher le chemin du répertoire courant</span>
+        </div>
+
+        <div class="command">
+            <p><strong>mkdir [nom]</strong></p>
+            <span class="description">Créer un nouveau répertoire</span>
+        </div>
+
+        <h2>Manipulation des fichiers</h2>
+
+        <div class="command">
+            <p><strong>cat [fichier]</strong></p>
+            <span class="description">Afficher le contenu d'un fichier</span>
+        </div>
+
+        <div class="command">
+            <p><strong>grep [mot-clé] [fichier]</strong></p>
+            <span class="description">Rechercher une chaîne spécifique dans un fichier</span>
+        </div>
+
+        <div class="command">
+            <p><strong>touch [fichier]</strong></p>
+            <span class="description">Créer un nouveau fichier</span>
+        </div>
+
+        <div class="command">
+            <p><strong>rm [fichier]</strong></p>
+            <span class="description">Supprimer un fichier</span>
+        </div>
+
+        <div class="command">
+            <p><strong>cp [source] [destination]</strong></p>
+            <span class="description">Copier un fichier ou un dossier</span>
+        </div>
+
+        <div class="command">
+            <p><strong>mv [source] [destination]</strong></p>
+            <span class="description">Déplacer ou renommer un fichier ou dossier</span>
+        </div>
+
+        <h2>Commandes système</h2>
+
+        <div class="command tooltip">
+            <p><strong>sudo [commande]</strong></p>
+            <span class="description">Exécuter une commande en tant qu'administrateur</span>
+            <span class="tooltiptext">Utilisez avec précaution!</span>
+        </div>
+
+        <div class="command">
+            <p><strong>df -h</strong></p>
+            <span class="description">Afficher l'utilisation du disque</span>
+        </div>
+
+        <div class="command">
+            <p><strong>top</strong></p>
+            <span class="description">Afficher les processus actifs en temps réel</span>
+        </div>
+
+        <div class="command">
+            <p><strong>ps aux</strong></p>
+            <span class="description">Lister les processus en cours d'exécution</span>
+        </div>
+
+        <div class="command">
+            <p><strong>kill [PID]</strong></p>
+            <span class="description">Terminer un processus spécifique</span>
+        </div>
+
+        <h2>Commandes réseau</h2>
+
+        <div class="command">
+            <p><strong>ping [adresse]</strong></p>
+            <span class="description">Envoyer des requêtes ping à une adresse IP ou un domaine</span>
+        </div>
+
+        <div class="command">
+            <p><strong>ifconfig</strong></p>
+            <span class="description">Afficher les informations réseau de votre machine</span>
+        </div>
+
+        <div class="command">
+            <p><strong>netstat -tuln</strong></p>
+            <span class="description">Afficher les connexions réseau actives</span>
+        </div>
+
+        <h2>Gestion des paquets avec Pacman</h2>
+
+        <div class="command">
+            <p><strong>sudo pacman -S [paquet]</strong></p>
+            <span class="description">Installer un paquet depuis les dépôts officiels</span>
+        </div>
+
+        <div class="command">
+            <p><strong>sudo pacman -R [paquet]</strong></p>
+            <span class="description">Désinstaller un paquet</span>
+        </div>
+
+        <div class="command">
+            <p><strong>sudo pacman -Sy</strong></p>
+            <span class="description">Synchroniser les dépôts sans installer</span>
+        </div>
+
+        <div class="command">
+            <p><strong>sudo pacman -Syu</strong></p>
+            <span class="description">Mettre à jour tout le système</span>
+        </div>
+
+        <h2>Gestion des paquets AUR avec Yay</h2>
+
+        <div class="command">
+            <p><strong>yay</strong></p>
+            <span class="description">Mettre à jour tous les paquets AUR et Arch</span>
+        </div>
+
+        <div class="command">
+            <p><strong>yay -S [paquet]</strong></p>
+            <span class="description">Installer un paquet depuis AUR</span>
+        </div>
+
+        <div class="command">
+            <p><strong>yay -R [paquet]</strong></p>
+            <span class="description">Désinstaller un paquet AUR</span>
+        </div>
+
+        <div class="command">
+            <p><strong>yay -Ss [nom_paquet]</strong></p>
+            <span class="description">Rechercher un paquet dans AUR</span>
+        </div>
+
+        <div class="command">
+            <p><strong>yay -Yc</strong></p>
+            <span class="description">Nettoyer les dépendances inutilisées</span>
+        </div>
+
+        <h2>Autres commandes utiles</h2>
+
+        <div class="command">
+            <p><strong>clear</strong></p>
+            <span class="description">Nettoyer le terminal</span>
+        </div>
+
+        <div class="command">
+            <p><strong>history</strong></p>
+            <span class="description">Afficher l'historique des commandes</span>
+        </div>
+
+        <div class="command">
+            <p><strong>alias [alias]='[commande]'</strong></p>
+            <span class="description">Créer un raccourci pour une commande</span>
+        </div>
+
+        <div class="command">
+            <p><strong>uname -r</strong></p>
+            <span class="description">Afficher la version du noyau Linux</span>
+        </div>
+
+    </div>
+
+    <script>
+        // Vous pouvez ajouter du JS si nécessaire pour des fonctionnalités supplémentaires
+    </script>
+</body>
+</html>
