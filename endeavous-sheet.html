@@ -123,27 +123,62 @@
             <p><strong>Endeavour OS</strong> est une distribution basée sur Arch Linux, conçue pour être légère et facilement personnalisable. Elle utilise principalement un terminal pour la gestion des paquets, des mises à jour et l'exécution des tâches administratives. Endeavour OS offre aussi l'outil <strong>yay</strong> pour la gestion des paquets AUR (Arch User Repository), facilitant l'installation de logiciels supplémentaires.</p>
         </div>
 
-        <h2>Navigation dans le terminal</h2>
+       <h2>Navigation dans le terminal</h2>
 
-        <div class="command">
-            <p><strong>ls</strong></p>
-            <span class="description">Lister les fichiers dans le répertoire courant</span>
-        </div>
+<div class="command">
+    <p><strong>ls</strong></p>
+    <span class="description">Lister les fichiers dans le répertoire courant</span>
+</div>
 
-        <div class="command">
-            <p><strong>cd [répertoire]</strong></p>
-            <span class="description">Changer de répertoire</span>
-        </div>
+<div class="command">
+    <p><strong>cd [répertoire]</strong></p>
+    <span class="description">Changer de répertoire</span>
+</div>
 
-        <div class="command">
-            <p><strong>pwd</strong></p>
-            <span class="description">Afficher le chemin du répertoire courant</span>
-        </div>
+<div class="command">
+    <p><strong>pwd</strong></p>
+    <span class="description">Afficher le chemin du répertoire courant</span>
+</div>
 
-        <div class="command">
-            <p><strong>mkdir [nom]</strong></p>
-            <span class="description">Créer un nouveau répertoire</span>
-        </div>
+<div class="command">
+    <p><strong>mkdir [nom]</strong></p>
+    <span class="description">Créer un nouveau répertoire</span>
+</div>
+
+<div class="command">
+    <p><strong>touch [nom_fichier.txt]</strong></p>
+    <span class="description">Créer un nouveau fichier texte vide ou mettre à jour la date de modification d'un fichier existant</span>
+</div>
+
+<div class="command">
+    <p><strong>nano [nom_fichier.txt]</strong></p>
+    <span class="description">Créer ou éditer un fichier texte avec l'éditeur de texte nano</span>
+</div>
+
+<div class="command">
+    <p><strong>echo "Texte" > [nom_fichier.txt]</strong></p>
+    <span class="description">Écrire du texte dans un nouveau fichier (écrase le contenu existant)</span>
+</div>
+
+<div class="command">
+    <p><strong>echo "Texte" >> [nom_fichier.txt]</strong></p>
+    <span class="description">Ajouter du texte à la fin d'un fichier existant</span>
+</div>
+
+<div class="command">
+    <p><strong>cat [nom_fichier.txt]</strong></p>
+    <span class="description">Afficher le contenu d'un fichier texte</span>
+</div>
+
+<div class="command">
+    <p><strong>iconv -f [encodage_source] -t [encodage_cible] [fichier_source] -o [fichier_destination]</strong></p>
+    <span class="description">Convertir un fichier d'un encodage à un autre (ex: UTF-8, ISO-8859-1)</span>
+</div>
+
+<div class="command">
+    <p><strong>file [nom_fichier]</strong></p>
+    <span class="description">Déterminer le type d'un fichier (par exemple, texte, image, etc.)</span>
+</div>
 
 <h2>Suppression des traces et nettoyage des logs</h2>
 
