@@ -145,6 +145,94 @@
             <span class="description">Créer un nouveau répertoire</span>
         </div>
 
+<h2>Suppression des traces et nettoyage des logs</h2>
+
+<div class="command">
+    <p><strong>history -c</strong></p>
+    <span class="description">Effacer l'historique des commandes de la session actuelle</span>
+</div>
+
+<div class="command">
+    <p><strong>rm ~/.bash_history</strong></p>
+    <span class="description">Supprimer le fichier d'historique des commandes pour l'utilisateur courant</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo journalctl --vacuum-time=1d</strong></p>
+    <span class="description">Supprimer les logs du journal système datant de plus d'un jour</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo rm -rf /var/log/*.log</strong></p>
+    <span class="description">Supprimer tous les fichiers de logs dans le répertoire /var/log</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo truncate -s 0 /var/log/syslog</strong></p>
+    <span class="description">Vider le contenu du fichier syslog sans le supprimer</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo rm -rf ~/.cache/*</strong></p>
+    <span class="description">Supprimer tous les fichiers de cache de l'utilisateur courant</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo find / -name '*.log' -delete</strong></p>
+    <span class="description">Supprimer tous les fichiers de logs dans le système (utiliser avec précaution)</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo rm -rf /tmp/*</strong></p>
+    <span class="description">Supprimer tous les fichiers temporaires dans le répertoire /tmp</span>
+</div>
+
+
+
+        <h2>Gestion des fichiers cachés</h2>
+
+<div class="command">
+    <p><strong>ls -a</strong></p>
+    <span class="description">Lister tous les fichiers, y compris les fichiers cachés dans le répertoire courant</span>
+</div>
+
+<div class="command">
+    <p><strong>ls -la</strong></p>
+    <span class="description">Lister tous les fichiers avec des détails, y compris les fichiers cachés</span>
+</div>
+
+<div class="command">
+    <p><strong>cd .[répertoire]</strong></p>
+    <span class="description">Accéder à un sous-répertoire caché</span>
+</div>
+
+<div class="command">
+    <p><strong>cp -r .[dossier] [destination]</strong></p>
+    <span class="description">Copier un dossier caché et son contenu vers un autre emplacement</span>
+</div>
+
+<div class="command">
+    <p><strong>mv .[fichier] [nouveau_nom]</strong></p>
+    <span class="description">Renommer ou déplacer un fichier caché</span>
+</div>
+
+<div class="command">
+    <p><strong>rm .[fichier]</strong></p>
+    <span class="description">Supprimer un fichier caché</span>
+</div>
+
+<div class="command">
+    <p><strong>touch .[fichier]</strong></p>
+    <span class="description">Créer un nouveau fichier caché</span>
+</div>
+
+<div class="command">
+    <p><strong>nano .[fichier]</strong></p>
+    <span class="description">Éditer un fichier caché avec l'éditeur de texte nano</span>
+</div>
+
+
+
         <h2>Manipulation des fichiers</h2>
 
         <div class="command">
@@ -176,6 +264,67 @@
             <p><strong>mv [source] [destination]</strong></p>
             <span class="description">Déplacer ou renommer un fichier ou dossier</span>
         </div>
+
+
+        <h2>Gestion des utilisateurs et accès root</h2>
+
+<div class="command">
+    <p><strong>sudo su</strong></p>
+    <span class="description">Passer en tant que root (superutilisateur)</span>
+</div>
+
+<div class="command">
+    <p><strong>su [utilisateur]</strong></p>
+    <span class="description">Changer d’utilisateur sans mot de passe (si déjà root) ou avec le mot de passe de l’utilisateur spécifié</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo -i</strong></p>
+    <span class="description">Ouvrir un shell de connexion root avec les variables d’environnement de root</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo passwd root</strong></p>
+    <span class="description">Changer ou définir le mot de passe root</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo adduser [nom_utilisateur]</strong></p>
+    <span class="description">Créer un nouvel utilisateur avec son répertoire personnel</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo userdel [nom_utilisateur]</strong></p>
+    <span class="description">Supprimer un utilisateur</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo usermod -aG [groupe] [utilisateur]</strong></p>
+    <span class="description">Ajouter un utilisateur à un groupe spécifique</span>
+</div>
+
+<div class="command">
+    <p><strong>groups [utilisateur]</strong></p>
+    <span class="description">Afficher les groupes auxquels appartient un utilisateur</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo visudo</strong></p>
+    <span class="description">Modifier le fichier sudoers pour définir les permissions administratives des utilisateurs</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo deluser [utilisateur] [groupe]</strong></p>
+    <span class="description">Supprimer un utilisateur d'un groupe</span>
+</div>
+
+<div class="command">
+    <p><strong>whoami</strong></p>
+    <span class="description">Afficher le nom de l'utilisateur courant</span>
+</div>
+
+
+
 
         <h2>Commandes système</h2>
 
@@ -293,7 +442,249 @@
             <span class="description">Afficher la version du noyau Linux</span>
         </div>
 
+
+        <h2>Gestion des processus</h2>
+
+<div class="command">
+    <p><strong>kill [PID]</strong></p>
+    <span class="description">Terminer un processus spécifique en utilisant son PID</span>
+</div>
+
+<div class="command">
+    <p><strong>killall [nom_programme]</strong></p>
+    <span class="description">Terminer tous les processus d’un programme donné</span>
+</div>
+
+<div class="command">
+    <p><strong>pkill [nom]</strong></p>
+    <span class="description">Terminer un processus par son nom (ou par une expression)</span>
+</div>
+
+<div class="command">
+    <p><strong>htop</strong></p>
+    <span class="description">Afficher les processus en cours dans un affichage interactif (alternative à top)</span>
+</div>
+
+<h2>Gestion de la mémoire et des ressources</h2>
+
+<div class="command">
+    <p><strong>free -h</strong></p>
+    <span class="description">Afficher l’utilisation de la mémoire (RAM et Swap) en format lisible</span>
+</div>
+
+<div class="command">
+    <p><strong>uptime</strong></p>
+    <span class="description">Afficher le temps de fonctionnement du système et la charge moyenne</span>
+</div>
+
+<h2>Gestion avancée des fichiers</h2>
+
+<div class="command">
+    <p><strong>chmod [permissions] [fichier]</strong></p>
+    <span class="description">Changer les permissions d'un fichier ou répertoire</span>
+</div>
+
+<div class="command">
+    <p><strong>chown [propriétaire]:[groupe] [fichier]</strong></p>
+    <span class="description">Changer le propriétaire et le groupe d’un fichier ou répertoire</span>
+</div>
+
+<div class="command">
+    <p><strong>rsync -avh [source] [destination]</strong></p>
+    <span class="description">Synchroniser des fichiers ou répertoires entre deux endroits</span>
+</div>
+
+<h2>Commandes avancées système</h2>
+
+<div class="command">
+    <p><strong>systemctl start [service]</strong></p>
+    <span class="description">Démarrer un service</span>
+</div>
+
+<div class="command">
+    <p><strong>systemctl stop [service]</strong></p>
+    <span class="description">Arrêter un service</span>
+</div>
+
+<div class="command">
+    <p><strong>systemctl restart [service]</strong></p>
+    <span class="description">Redémarrer un service</span>
+</div>
+
+<div class="command">
+    <p><strong>systemctl status [service]</strong></p>
+    <span class="description">Afficher le statut d’un service</span>
+</div>
+
+<div class="command">
+    <p><strong>shutdown now</strong></p>
+    <span class="description">Éteindre immédiatement le système</span>
+</div>
+
+<div class="command">
+    <p><strong>reboot</strong></p>
+    <span class="description">Redémarrer le système</span>
+</div>
+
+<h2>Recherche et localisation des fichiers</h2>
+
+<div class="command">
+    <p><strong>find [chemin] -name [nom_fichier]</strong></p>
+    <span class="description">Rechercher des fichiers par nom dans un répertoire spécifique et ses sous-répertoires</span>
+</div>
+
+<div class="command">
+    <p><strong>find [chemin] -type f -mtime -n</strong></p>
+    <span class="description">Rechercher des fichiers modifiés dans les "n" derniers jours</span>
+</div>
+
+<div class="command">
+    <p><strong>locate [nom_fichier]</strong></p>
+    <span class="description">Trouver rapidement un fichier grâce à une base de données indexée</span>
+</div>
+
+<div class="command">
+    <p><strong>updatedb</strong></p>
+    <span class="description">Mettre à jour la base de données utilisée par locate</span>
+</div>
+
+<div class="command">
+    <p><strong>du -sh [chemin]</strong></p>
+    <span class="description">Afficher la taille totale d’un répertoire ou fichier</span>
+</div>
+
+<div class="command">
+    <p><strong>du -h --max-depth=1</strong></p>
+    <span class="description">Afficher la taille de chaque dossier dans le répertoire courant</span>
+</div>
+
+<div class="command">
+    <p><strong>ln -s [fichier_original] [lien_symbolique]</strong></p>
+    <span class="description">Créer un lien symbolique vers un fichier ou un répertoire</span>
+</div>
+
+<h2>Manipulation avancée des fichiers</h2>
+
+<div class="command">
+    <p><strong>tar -cvf [archive.tar] [fichiers]</strong></p>
+    <span class="description">Créer une archive tar d'un ou plusieurs fichiers ou répertoires</span>
+</div>
+
+<div class="command">
+    <p><strong>tar -xvf [archive.tar]</strong></p>
+    <span class="description">Extraire une archive tar</span>
+</div>
+
+<div class="command">
+    <p><strong>gzip [fichier]</strong></p>
+    <span class="description">Compresser un fichier avec gzip</span>
+</div>
+
+<div class="command">
+    <p><strong>gunzip [fichier.gz]</strong></p>
+    <span class="description">Décompresser un fichier gzip</span>
+</div>
+
+<div class="command">
+    <p><strong>zip [archive.zip] [fichier]</strong></p>
+    <span class="description">Compresser un fichier ou un répertoire en format zip</span>
+</div>
+
+<div class="command">
+    <p><strong>unzip [archive.zip]</strong></p>
+    <span class="description">Extraire un fichier compressé en format zip</span>
+</div>
+
+<h2>Sécurité et analyse des fichiers</h2>
+
+<div class="command">
+    <p><strong>sudo clamscan -r [chemin]</strong></p>
+    <span class="description">Effectuer une analyse antivirus récursive dans le répertoire spécifié</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo clamscan -r --remove [chemin]</strong></p>
+    <span class="description">Analyser et supprimer automatiquement les fichiers infectés</span>
+</div>
+
+<div class="command">
+    <p><strong>freshclam</strong></p>
+    <span class="description">Mettre à jour la base de données des signatures de ClamAV</span>
+</div>
+
+<div class="command">
+    <p><strong>rkhunter --check</strong></p>
+    <span class="description">Scanner le système pour détecter les rootkits potentiels</span>
+</div>
+
+<div class="command">
+    <p><strong>chkrootkit</strong></p>
+    <span class="description">Vérifier la présence de rootkits sur le système</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo ufw enable</strong></p>
+    <span class="description">Activer le pare-feu UFW (Uncomplicated Firewall)</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo ufw status</strong></p>
+    <span class="description">Afficher l'état du pare-feu UFW</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo ufw allow [port]</strong></p>
+    <span class="description">Autoriser le trafic sur un port spécifique via UFW</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo ufw deny [port]</strong></p>
+    <span class="description">Bloquer le trafic sur un port spécifique via UFW</span>
+</div>
+
+<div class="command">
+    <p><strong>fail2ban-client status</strong></p>
+    <span class="description">Vérifier l'état de Fail2ban pour bloquer les tentatives de connexion malveillantes</span>
+</div>
+
+<div class="command">
+    <p><strong>fail2ban-client set [jail] banip [IP]</strong></p>
+    <span class="description">Bannir manuellement une adresse IP via Fail2ban</span>
+</div>
+
+<h2>Commandes de diagnostic réseau avancé</h2>
+
+<div class="command">
+    <p><strong>nmap [adresse_IP]</strong></p>
+    <span class="description">Scanner un hôte ou un réseau pour détecter les ports ouverts et les services</span>
+</div>
+
+<div class="command">
+    <p><strong>nmap -sP [plage_IP]</strong></p>
+    <span class="description">Découverte des hôtes actifs dans une plage IP</span>
+</div>
+
+<div class="command">
+    <p><strong>sudo netstat -tulnp</strong></p>
+    <span class="description">Afficher les connexions réseau actives et les ports ouverts</span>
+</div>
+
+<div class="command">
+    <p><strong>whois [domaine]</strong></p>
+    <span class="description">Afficher les informations WHOIS d’un domaine</span>
+</div>
+
+<div class="command">
+    <p><strong>dig [nom_domaine]</strong></p>
+    <span class="description">Effectuer des requêtes DNS pour obtenir des informations détaillées sur un domaine</span>
+</div>
+
+
+
+
     </div>
+
+
 
     <script>
         // Vous pouvez ajouter du JS si nécessaire pour des fonctionnalités supplémentaires
